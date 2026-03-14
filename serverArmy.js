@@ -4,6 +4,7 @@ export async function main(ns) {
   let servers = ns.getPurchasedServers();
 
   for (let server of servers) {
+    await ns.scp(scriptName, server, "home");
     ns.killall(server);
     let freeRam = ns.getServerMaxRam(server) - ns.getServerUsedRam(server);
     let scriptRam = ns.getScriptRam(scriptName);

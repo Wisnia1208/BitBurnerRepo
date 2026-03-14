@@ -1,6 +1,6 @@
 /** @param {NS} ns */
 export async function main(ns) {
-  const input = ["TRASH ARRAY DEBUG MEDIA MACRO", 17];
+  const input = ["FRAME MODEM DEBUG CLOUD CACHE", 6];
   const plaintext = input[0];
   const shift = input[1];
 
