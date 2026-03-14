@@ -25,6 +25,8 @@ export async function main(ns) {
 
     if (!ns.hasRootAccess(target)) {
       try {
+        ns.httpworm(target);
+        ns.sqlinject(target);
         ns.ftpcrack(target);
         ns.relaysmtp(target);
         ns.brutessh(target);

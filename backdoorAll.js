@@ -32,23 +32,21 @@ export async function main(ns) {
     const serverInfo = ns.getServer(target);
     if (ns.hasRootAccess(target) && !serverInfo.backdoorInstalled) {
       try {
-        ns.tprint(`Instalowanie backdoora na ${target}...`);
+        ns.tprint(`Installing backdoor on ${target}...`);
 
-        // Musisz tam "wejść" fizycznie
+        // You have to connect to the target server physically
         ns.singularity.connect(target);
 
-        // CZEKAMY na zakończenie instalacji (to jest Promise!)
+        // Wait for installation to complete (this is a Promise)
         await ns.singularity.installBackdoor();
 
-        ns.tprint(`Sukces: Backdoor zainstalowany na ${target}`);
+        ns.tprint(`Success: Backdoor installed on ${target}`);
 
-        // Powrót na home, żeby móc połączyć się z kolejnym celem
+        // Return to home so you can connect to the next target
         ns.singularity.connect("home");
       } catch (e) {
-        ns.tprint(
-          `Nie udało się zainstalować backdoora na ${target} (za niski skill?)`,
-        );
-        ns.singularity.connect("home"); // Wróć nawet jeśli błąd
+        ns.tprint(`Failed to install backdoor on ${target} (maybe low skill?)`);
+        ns.singularity.connect("home"); // Return even on error
       }
     }
   }

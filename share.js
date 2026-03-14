@@ -1,6 +1,6 @@
 /** @param {NS} ns **/
 export async function main(ns) {
   while (true) {
-    await ns.share(); // Ta funkcja trwa zawsze 10 sekund
+    await ns.share(); // This function always lasts 10 seconds
   }
 }
