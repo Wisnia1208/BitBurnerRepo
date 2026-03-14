@@ -1,0 +1,12 @@
+# Ignore VS Code workspace settings
+.vscode/settings.json
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
