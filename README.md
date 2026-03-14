@@ -11,6 +11,12 @@ This repository contains scripts for the BitBurner game (JavaScript/TypeScript s
 - `backdoorAll.js` - scans network and attempts to backdoor available servers
 - `sendToAllAutomate.js` - copies and runs a script on all reachable servers
 - `n00dles.js`, `hackSelf.js` - auto-farm variants for one specific target
+- `findContracts.js` - scans all reachable hosts and prints ones with coding contracts + paths
+- `sendToAllAutomate.js` - copies and runs a script on all reachable servers
+- `backdoorAll.js` - scans and installs backdoors on servers
+- `caesarCipher.js`, `CaesarCipher.java` - Caesar cipher example code
+- `algorithmicStockTraderIII.js` - coding contract solution for 2-transactions stock trader
+- `maxSubarraySum.js` - maximum subarray sum (Kadane) contract helper
 
 ## How to use
 
