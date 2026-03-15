@@ -25,11 +25,21 @@ export async function main(ns) {
 
     if (!ns.hasRootAccess(target)) {
       try {
-        ns.httpworm(target);
-        ns.sqlinject(target);
-        ns.ftpcrack(target);
-        ns.relaysmtp(target);
-        ns.brutessh(target);
+        if (ns.fileExists("BruteSSH.exe", "home")) {
+          ns.brutessh(target);
+        }
+        if (ns.fileExists("FTPCrack.exe", "home")) {
+          ns.ftpcrack(target);
+        }
+        if (ns.fileExists("relaySMTP.exe", "home")) {
+          ns.relaysmtp(target);
+        }
+        if (ns.fileExists("HTTPWorm.exe", "home")) {
+          ns.httpworm(target);
+        }
+        if (ns.fileExists("SQLInject.exe", "home")) {
+          ns.sqlinject(target);
+        }
         ns.nuke(target);
       } catch (e) {
         ns.tprint(`Cannot get root privilege on ${target}`);
@@ -43,7 +53,7 @@ export async function main(ns) {
 
     if (threads > 0) {
       ns.exec(scriptName, target, threads, target);
-      ns.tprint(`Script run on ${target} (${threads} threads)`);
+      //ns.tprint(`Script run on ${target} (${threads} threads)`);
     }
   }
 }
