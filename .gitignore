@@ -14,5 +14,5 @@ Thumbs.db
 # Logs
 *.log
 
-# Git files
-.github/
+# Ignore files in github folder
+github/
